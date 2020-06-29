@@ -1,0 +1,20 @@
+{
+  "name": "serialipprotocol",
+  "description": "Routine to read a CSV stream to make tags available to honcho application",
+  "version": "0.1.0",
+  "author": {
+    "name": "Dana Moffit",
+    "email": "nodejsplc@gmail.com"
+  },
+  "keywords": [
+    "PLC",
+    "serialip"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plcpeople/serialipprotocol"
+  },
+  "main": "serialipprotocol.js",
+  "engine": "node 10.x.x",
+  "license": "MIT"
+}
