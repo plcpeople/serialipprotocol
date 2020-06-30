@@ -229,6 +229,16 @@ NodeSerialIP.prototype.packetTimeout = function(packetType, packetSeqNum) {
 	outputLog("Unknown timeout error.  Nothing was done - this shouldn't happen.");
 }
 
+NodeSerialIP.prototype.writeItems = function(arg, value, cb) {
+	var self = this;
+	outputLog("Write called on SerialIP driver - write not supported", 0, self.connectionID);
+	if (typeof(cb) === 'function') {
+		process.nextTick(function() {
+			cb(true);
+		});
+	}
+}
+
 NodeSerialIP.prototype.onTCPConnect = function() {
 	var self = this, connBuf;
 
@@ -470,7 +480,7 @@ NodeSerialIP.prototype.readResponse = function(data) {
 
 		} else {
 			self.globalReadBlockList[i].value = self.globalReadBlockList[i].badValue();
-			self.globalReadBlockList[i].quality = 'BAD';
+			self.globalReadBlockList[i].quality = 'BAD 255';
 		}
 	}
 
